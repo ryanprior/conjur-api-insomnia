@@ -1,0 +1,75 @@
+# Roles
+- !user alice
+- !resource
+  kind: public_key
+  id: user/alice/workstation
+  annotations:
+    description: public key for Alice's work machine
+- !user bob
+- !user charlie
+
+# Policy branches for database and query runner
+- !policy
+  id: database
+  owner: !user alice
+  body:
+    # Database roles
+    - !layer users
+    - !group admins
+    # Database resources (variables)
+    - !variable password
+    - !variable admin-password
+    # Host factory for users layer
+    - !host-factory
+      id: users
+      layers: [ !layer users ]
+    # Database permissions
+    - !permit
+      role: !group admins
+      privileges:
+        - read
+        - execute
+        - update
+      resources:
+        - !variable password
+        - !variable admin-password
+    - !permit
+      role: !layer users
+      privileges:
+        - read
+        - execute
+      resources:
+        - !variable password
+
+- !policy
+  id: query-runner
+  owner: !user charlie
+  body:
+    # Roles
+    - !group deployers
+    - !host
+    # Resources
+    - !variable deploy-key
+    # Permissions
+    - !permit
+      role: !group deployers
+      privileges:
+        - read
+        - execute
+        - update
+      resource: !variable deploy-key
+
+# Entitlements
+- !grant
+  role: !group database/admins
+  members:
+    - !user alice
+    - !user charlie
+
+- !grant
+  role: !group query-runner/deployers
+  member: !user bob
+
+- !grant
+  role: !layer database/users
+  member: !host query-runner
