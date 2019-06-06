@@ -1,8 +1,8 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2019-05-28T20:31:46.015Z",
-  "__export_source": "insomnia.desktop.app:v6.5.3",
+  "__export_date": "2019-06-06T14:35:32.372Z",
+  "__export_source": "insomnia.desktop.app:v6.5.4",
   "resources": [
     {
       "_id": "req_f07571ada3b24ee7b27243b159baf70d",
@@ -31,6 +31,7 @@
       "created": 1537913668925,
       "description": "",
       "environment": null,
+      "environmentPropertyOrder": null,
       "metaSortKey": -1537913668925,
       "modified": 1537913668925,
       "name": "Server Health",
@@ -83,6 +84,7 @@
           "kind": "user"
         }
       },
+      "environmentPropertyOrder": null,
       "metaSortKey": -1537548167168,
       "modified": 1537909147306,
       "name": "Authentication",
@@ -175,7 +177,7 @@
       "_id": "req_bdbe80ed159a429cb19ac8deb19af1f2",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": {
@@ -194,7 +196,7 @@
       "isPrivate": false,
       "metaSortKey": -1537471015657,
       "method": "PUT",
-      "modified": 1537918814637,
+      "modified": 1559246851093,
       "name": "Rotate another API key",
       "parameters": [],
       "parentId": "fld_46d9d0e0179148468ee5fa47776160bd",
@@ -210,7 +212,7 @@
       "_id": "req_8bc31981f0fe47f19826a902cd8502b6",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": {
@@ -223,7 +225,7 @@
       "isPrivate": false,
       "metaSortKey": -1537479617398,
       "method": "POST",
-      "modified": 1537918812537,
+      "modified": 1559246867669,
       "name": "Add a secret value to a variable",
       "parameters": [],
       "parentId": "fld_e86d4ddcea2f4751ae5760a8caf8ad07",
@@ -247,6 +249,7 @@
           "query_runner_deploy_key": "{{ account  }}:variable:query-runner/deploy-key"
         }
       },
+      "environmentPropertyOrder": null,
       "metaSortKey": -1537548167118,
       "modified": 1537909152452,
       "name": "Secrets",
@@ -258,7 +261,7 @@
       "authentication": {
         "disabled": false,
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -268,7 +271,7 @@
       "isPrivate": false,
       "metaSortKey": -1537475316627.5,
       "method": "GET",
-      "modified": 1537918811953,
+      "modified": 1559246793613,
       "name": "Get the value of a secret",
       "parameters": [],
       "parentId": "fld_e86d4ddcea2f4751ae5760a8caf8ad07",
@@ -285,7 +288,7 @@
       "authentication": {
         "disabled": false,
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -295,7 +298,7 @@
       "isPrivate": false,
       "metaSortKey": -1537473166242.25,
       "method": "GET",
-      "modified": 1537918811213,
+      "modified": 1559246887331,
       "name": "Retrieve secret values as a batch",
       "parameters": [
         {
@@ -318,7 +321,7 @@
       "_id": "req_5b353ab2ae5345c0b8f920e687dce6f8",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": {
@@ -331,7 +334,7 @@
       "isPrivate": false,
       "metaSortKey": -1537548193729,
       "method": "PUT",
-      "modified": 1537918793238,
+      "modified": 1559246904276,
       "name": "Replace a policy",
       "parameters": [],
       "parentId": "fld_fedbb34641974ef7b99345ffda653b90",
@@ -353,8 +356,17 @@
           "text": "{% file './policy.yml' %}"
         }
       },
+      "environmentPropertyOrder": {
+        "&": [
+          "policy"
+        ],
+        "&~|policy": [
+          "id",
+          "text"
+        ]
+      },
       "metaSortKey": -1537548167018,
-      "modified": 1537917844203,
+      "modified": 1559245249487,
       "name": "Policy",
       "parentId": "wrk_99be80f9c34947fe9ff64870604bdee8",
       "_type": "request_group"
@@ -363,7 +375,7 @@
       "_id": "req_41a4230f9d8443ba92cad7b87239ebf9",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": {
@@ -376,7 +388,7 @@
       "isPrivate": false,
       "metaSortKey": -1537513905563.5,
       "method": "POST",
-      "modified": 1537918793936,
+      "modified": 1559246804110,
       "name": "Append to a policy",
       "parameters": [],
       "parentId": "fld_fedbb34641974ef7b99345ffda653b90",
@@ -392,7 +404,7 @@
       "_id": "req_b4c51fd88b6b4170ba5b136042de2741",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": {
@@ -405,7 +417,7 @@
       "isPrivate": false,
       "metaSortKey": -1537496761480.75,
       "method": "PATCH",
-      "modified": 1537918794781,
+      "modified": 1559246907947,
       "name": "Update a policy",
       "parameters": [],
       "parentId": "fld_fedbb34641974ef7b99345ffda653b90",
@@ -421,7 +433,7 @@
       "_id": "req_d1ef445a992f4e26acfce84772e8d83f",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -431,7 +443,7 @@
       "isPrivate": false,
       "metaSortKey": -1537553523186,
       "method": "GET",
-      "modified": 1537918795770,
+      "modified": 1559246912179,
       "name": "Show a role",
       "parameters": [],
       "parentId": "fld_0ef8fdecd82c482dbfc57a76522da1ce",
@@ -457,6 +469,7 @@
           "kind": "group"
         }
       },
+      "environmentPropertyOrder": null,
       "metaSortKey": -1537548166968,
       "modified": 1537909204967,
       "name": "Role-based access control",
@@ -467,7 +480,7 @@
       "_id": "req_b6b0b4d7058f4d43b41bdb7c703e355d",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -477,7 +490,7 @@
       "isPrivate": false,
       "metaSortKey": -1537550858457.5,
       "method": "GET",
-      "modified": 1537918796613,
+      "modified": 1559246915190,
       "name": "List a role's members",
       "parameters": [
         {
@@ -504,7 +517,7 @@
       "_id": "req_0f8b9d7c185d41a0a47fe024a6275a82",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -514,7 +527,7 @@
       "isPrivate": false,
       "metaSortKey": -1537549526093.25,
       "method": "GET",
-      "modified": 1537918797308,
+      "modified": 1559246917920,
       "name": "List resources",
       "parameters": [
         {
@@ -561,7 +574,7 @@
       "_id": "req_44b391b0a4fa4fb8aa16052db4f047ee",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -571,7 +584,7 @@
       "isPrivate": false,
       "metaSortKey": -1537549526043.25,
       "method": "GET",
-      "modified": 1537918798174,
+      "modified": 1559246920546,
       "name": "Show a resource",
       "parameters": [],
       "parentId": "fld_0ef8fdecd82c482dbfc57a76522da1ce",
@@ -587,7 +600,7 @@
       "_id": "req_5294a0692deb46e18933a25fba3af584",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -597,7 +610,7 @@
       "isPrivate": false,
       "metaSortKey": -1537549525993.25,
       "method": "GET",
-      "modified": 1537918799239,
+      "modified": 1559246923699,
       "name": "Show permitted roles",
       "parameters": [
         {
@@ -626,7 +639,7 @@
       "_id": "req_2a3fb84007564052ac6488eaea64a181",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -636,7 +649,7 @@
       "isPrivate": false,
       "metaSortKey": -1537548859861.125,
       "method": "GET",
-      "modified": 1537918800576,
+      "modified": 1559246926117,
       "name": "Check permission on resource",
       "parameters": [
         {
@@ -671,7 +684,7 @@
       "_id": "req_743475a6a5ca4d40a9eca444e5926b35",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -681,7 +694,7 @@
       "isPrivate": false,
       "metaSortKey": -1537557874972,
       "method": "POST",
-      "modified": 1537918801706,
+      "modified": 1559246929674,
       "name": "Create a host factory token",
       "parameters": [
         {
@@ -731,6 +744,7 @@
         "host_factory_token": "{% response 'body', 'req_743475a6a5ca4d40a9eca444e5926b35', '$[0].token' %}",
         "new_host_id": "brand_new_host"
       },
+      "environmentPropertyOrder": null,
       "metaSortKey": -1537548166943,
       "modified": 1537909480503,
       "name": "Host factory",
@@ -741,7 +755,7 @@
       "_id": "req_0b4312cdb4c5402080458a145d336064",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": null,
@@ -751,7 +765,7 @@
       "isPrivate": false,
       "metaSortKey": -1537556893340,
       "method": "DELETE",
-      "modified": 1537918802542,
+      "modified": 1559246932360,
       "name": "Revoke a token",
       "parameters": [],
       "parentId": "fld_ee52e58dae5b4d048ed2896f825ebfca",
@@ -792,7 +806,7 @@
       "isPrivate": false,
       "metaSortKey": -1537556893290,
       "method": "POST",
-      "modified": 1537918804927,
+      "modified": 1559246943194,
       "name": "Create a host using a token",
       "parameters": [],
       "parentId": "fld_ee52e58dae5b4d048ed2896f825ebfca",
@@ -808,7 +822,7 @@
       "_id": "req_ac47327dd05543b2a4fc9fd006c40353",
       "authentication": {
         "prefix": "Token",
-        "token": "token=\"{% base64 'encode', auth_token %}\"",
+        "token": "token=\"{% base64 'encode', 'normal', auth_token %}\"",
         "type": "bearer"
       },
       "body": {
@@ -821,7 +835,7 @@
       "isPrivate": false,
       "metaSortKey": -1537555911708,
       "method": "POST",
-      "modified": 1537918807248,
+      "modified": 1559246948173,
       "name": "Add a public key to a role",
       "parameters": [],
       "parentId": "fld_322003bd37c94b01a74e5e30c89e29b8",
@@ -847,6 +861,7 @@
           "text": "AAAAB3NzagKagJ+JTg2LzKz3WzEe49HhIqxF"
         }
       },
+      "environmentPropertyOrder": null,
       "metaSortKey": -1537548166918,
       "modified": 1537909215647,
       "name": "Public keys",
@@ -883,9 +898,15 @@
         "account": "",
         "server": "https://eval.conjur.org"
       },
+      "dataPropertyOrder": {
+        "&": [
+          "server",
+          "account"
+        ]
+      },
       "isPrivate": false,
       "metaSortKey": 1537480642828,
-      "modified": 1537918785111,
+      "modified": 1559831555973,
       "name": "New Environment",
       "parentId": "wrk_99be80f9c34947fe9ff64870604bdee8",
       "_type": "environment"
@@ -909,9 +930,17 @@
         "id": "admin",
         "password": ""
       },
+      "dataPropertyOrder": {
+        "&": [
+          "api_key",
+          "auth_token",
+          "id",
+          "password"
+        ]
+      },
       "isPrivate": true,
       "metaSortKey": 1,
-      "modified": 1554479110449,
+      "modified": 1559246979904,
       "name": "admin",
       "parentId": "env_cbd402c54f08494ba2f2cf6013beab16",
       "_type": "environment"
@@ -926,6 +955,7 @@
         "id": "alice",
         "password": ""
       },
+      "dataPropertyOrder": null,
       "isPrivate": true,
       "metaSortKey": 2,
       "modified": 1537909130455,
@@ -943,6 +973,7 @@
         "id": "username",
         "password": ""
       },
+      "dataPropertyOrder": null,
       "isPrivate": false,
       "metaSortKey": 0,
       "modified": 1537909128317,
@@ -960,6 +991,7 @@
         "id": "bob",
         "password": ""
       },
+      "dataPropertyOrder": null,
       "isPrivate": true,
       "metaSortKey": 1537905713037,
       "modified": 1537909130907,
@@ -977,6 +1009,7 @@
         "id": "charlie",
         "password": ""
       },
+      "dataPropertyOrder": null,
       "isPrivate": true,
       "metaSortKey": 1537905722455,
       "modified": 1537909131380,
